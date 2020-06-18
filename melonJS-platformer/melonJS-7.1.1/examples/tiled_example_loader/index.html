@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>melonJS - Tiled example loader</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+    <!-- Canvas placeholder -->
+    <div id="screen">
+      <!-- melonJS Library -->
+      <script type="text/javascript" src="../../build/melonjs.js"></script>
+
+      <!-- Plugin(s) -->
+      <script type="text/javascript" src="../../plugins/debug/debugPanel.js"></script>
+
+      <!-- Game Scripts -->
+      <script type="text/javascript" src="js/ressources.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="js/play.js"></script>
+    </div>
+
+    <div id="map" style="float: left;">
+    <label for="tmx_map">Tiled Example map:</label>
+    <select id="level_name" onchange="game.changelevel()">
+        <option value=1>village</option>
+        <option value=2>desert</option>
+        <option value=3>sewers</option>
+        <option value=4>isometric</option>
+        <option value=5>perspective</option>
+    </select>
+    </div>
+    <!-- Bootstrap -->
+    <script type="text/javascript">
+      me.device.onReady(function onReady() {
+          game.onload();
+      });
+    </script>
+</body>
+</html>
